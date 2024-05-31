@@ -1,0 +1,37 @@
+Boundary Conditions
+
+Dirchlet
+
+  % Applying Dirichlet boundary conditions (fixed concentration)
+    u_next(1, :) = 0;           % Left boundary
+    u_next(end, :) = 0;         % Right boundary
+    u_next(:, 1) = 0;           % Bottom boundary
+    u_next(:, end) = 0;         % Top boundary
+
+Neumman
+
+### IMPERMEABLE
+
+ % Applying impermeable boundary conditions (flux = 0)
+     %u_next(1, :) = u_next(2, :);           % Left boundary
+     %u_next(end, :) = u_next(end-1, :);     % Right boundary
+     %u_next(:, 1) = u_next(:, 2);           % Bottom boundary
+     %u_next(:, end) = u_next(:, end-1);     % Top boundary
+
+### SYMMETRIC
+
+% Applying symmetric boundary conditions
+     u_next(1, :) = u_next(2, :);           % Left boundary
+     u_next(end, :) = u_next(end-1, :);     % Right boundary
+     u_next(:, 1) = u_next(:, 2);           % Bottom boundary
+     u_next(:, end) = u_next(:, end-1);     % Top boundary
+
+# FLOW IN AND FLOW OUT
+
+   % Applying mass flux boundary conditions
+    %u_next(1, :) = u_next(1, :) + dt * outflow_rate / dx;           % Left boundary
+    %u_next(end, :) = u_next(end, :) + dt * outflow_rate / dx;       % Right boundary
+    %u_next(:, 1) = u_next(:, 1) + dt * outflow_rate / dy;           % Bottom boundary
+    %u_next(:, end) = u_next(:, end) + dt * outflow_rate / dy;       % Top boundary
+
+

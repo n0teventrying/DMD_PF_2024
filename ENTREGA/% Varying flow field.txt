@@ -1,0 +1,5 @@
+ % Varying flow field
+            u_x = sin(2 * pi * Y(j) / L_y)*0.01;
+            v_y = cos(2 * pi * X(i) / L_x)*0.01;
+            p = u_x * (dt / dx);
+            q = v_y * (dt / dy);
